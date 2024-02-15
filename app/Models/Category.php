@@ -9,4 +9,9 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'slug'];
+    public $timestamps = false;
+
+    public function ads() {
+        return $this->hasMany(Ad::class);
+    }
 }

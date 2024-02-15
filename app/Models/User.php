@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'state_id'
     ];
 
     /**
@@ -42,4 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function state(){
+        return $this->belongsTo(State::class);;
+    }
+
+    public function ads() {
+        return $this->hasMany(Ad::class);
+    }
+
 }
