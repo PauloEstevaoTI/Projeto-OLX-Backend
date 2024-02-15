@@ -17,8 +17,9 @@ use Illuminate\Http\JsonResponse;
 
     - Rotas de configuração geral
 
-        [ ] /states - Listar os estados
-        [ ] /categories - Listar as categorias
+        [x] /states - Listar os estados
+        [x] /categories - Listar as categorias
+        [x] - Crias seeders para os estados e categorias
 
     - Rotas de Ads
 
