@@ -22,6 +22,20 @@ use Illuminate\Http\JsonResponse;
         [x] /categories - Listar as categorias
         [x] - Crias seeders para os estados e categorias
 
+    - Mensagens de erro devem conter:
+        error: Mensagem descritiva do erro, exemplo:
+        {
+            error: 'Usuário inválido'
+        }
+
+        Sucesso:
+        Deve conter um campo 'error' com o valor nulo ou vazio, exemplo:
+
+        {
+            error: ''
+        }
+
+
     - Rotas de Ads
 
         [ ] /ad/list - Listar todos os anúncios

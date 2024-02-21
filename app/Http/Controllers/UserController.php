@@ -20,7 +20,14 @@ class UserController extends Controller
         ]);
 
         $user = User::create($data);
-        return response()->json($user);
+
+        $response = [
+            'error' => '',
+            'user' => $user
+        ];
+
+
+        return response()->json($response);
 
         // return response()->json(['method' => 'signup']);
     }

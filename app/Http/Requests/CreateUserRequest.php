@@ -24,8 +24,8 @@ class CreateUserRequest extends FormRequest
         throw new HttpResponseException(
             response()->json(
             [
-                'errors' => $validator->errors(),
-                'status' => 'error'
+                'errors' => array_values($validator->errors()->getMessages())[0][0],
+
             ]
             ));
     }
