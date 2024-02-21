@@ -6,6 +6,8 @@ use App\Http\Requests\CreateUserRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -19,11 +21,13 @@ class UserController extends Controller
             'state_id'
         ]);
 
+        $data['password'] = Hash::make($data['password']);
+
         $user = User::create($data);
 
         $response = [
             'error' => '',
-            'user' => $user
+            'token' => $user->createToken('Register_token')->plainTextToken
         ];
 
 
